@@ -1,0 +1,630 @@
+<html>
+<head>
+</head>
+<body>
+<h1>tya</h1>
+<style >
+	div{
+		min-width: 30px;
+		min-height: 100px;
+		padding: 30px;
+		border: 1px solid black;
+
+	}
+	
+</style>
+<div id="root">
+	</div>
+
+
+	
+</body>
+<script>
+
+	//https://github.com/bharathtakkalki/hrms
+	//https://www.freepik.com/free-vector/listening-happy-music-concept-illustration_12516923.htm#page=1&query=dance&position=7
+	//https://react-icons.github.io/react-icons/search?q=people
+//let arr=[1,2,3,4,5];
+/*
+//ployfill for each loop
+Array.prototype.myeach=function(callback){
+for(let i=0;i<this.length;i++){
+callback(this[i],i,this);
+}
+}
+arr.myeach(function(data,i,a){
+console.log(data);
+console.log(a);
+});*/
+
+/*//polyfill for map
+Array.prototype.map=function(callback){
+	var arr=[];
+	for(let i=0;i<this.length;i++){
+		arr.push(callback(this[i]));
+	}
+	return arr;
+}
+var res=arr.map(data=>{
+	return data*2;
+
+})
+console.log(res);*/
+/*//polyfill for filter
+Array.prototype.filter=function(callback,context){
+	var arr=[];
+	for(let i=0;i<this.length;i++){
+            if (callback.call(context, this[i], i, this))
+            arr.push(this[i]);
+    }
+        return arr;
+
+	
+}
+	var res=arr.filter((data)=>{
+		return data>2;
+	})
+	console.log(res);*/
+
+
+	/*//toggling state in button
+	const root=document.getElementById('root');
+	root.innerHTML='<button id="button">ON</button>'
+	console.log(root);
+	const res=document.getElementById("button");
+	console.log(res);
+	res.addEventListener('click',()=>{
+		if(res.innerText=='ON'){
+			res.innerText='OFF'
+		}else{
+			res.innerText='ON';
+		}
+
+	})*/
+	/*//increment Counter on click button
+	const root=document.getElementById('root');
+	root.innerHTML='<p>value:<span id="inc">0</span></p> <button id="button">increment</button>'
+	console.log(root);
+	const value=document.getElementById('inc');
+	var count=value.innerText;
+	const res=document.getElementById("button");
+	res.addEventListener('click',()=>{
+		value.innerText=++count;
+
+	})*/
+
+
+	//call apply bind concept implementation
+	/*const obj={
+		name:"pranav",
+		age:20
+}
+function print(){
+	console.log(this.name+ this.age);
+}
+print.call(obj);
+const person={
+	fullname:function(city){
+		console.log(this.firstname+" "+ this.lastname+" "+city);
+	}
+}
+const person1={
+	firstname:"pranav",
+	lastname:"tyagi"
+}
+const person2={
+	firstname:"kartik",
+	lastname:"tyagi"
+}
+person.fullname.call(person1);
+person.fullname.call(person2,"deoband");
+person.fullname.apply(person2,["deoband"]);
+const res=person.fullname.bind(person2);
+//console.log(res,"deoband");
+res("deoband");*/
+
+//visible and unvisible on click on button
+	
+	/*const root=document.getElementById('root');
+	root.innerHTML='<p id="text">visible</p> <button id="button">clickme</button>';
+	const text=document.getElementById('text');
+	const button=document.getElementById('button');
+	button.addEventListener('click',()=>{
+		if(text.style.display=='block'){
+			text.style.display='none';
+		}else{
+			text.style.display='block';
+		}
+	})*/
+
+//closure this contain three state pending fuillfill and rejected
+/*const a=new Promise((resolve,reject)=>{
+	const a="pranav";
+	if(a==='tyagi'){
+		resolve(a);
+	}else{
+		reject("error");
+	}
+
+}).then(data=>{
+	console.log(data);
+}).catch(err=>{
+	console.log(err);
+})*/
+/*var res=setTimeout(()=>{
+	alert("hello")
+},1000);
+clearTimeout(res);*/
+
+
+//event delagation
+/*const root=document.getElementById('count');
+root.innerHTML='<div id="child">child</div> <div >parent</div><div>grandpafrent</div>'
+document.querySelector('#count').addEventListener('click',(e)=>{
+	console.log(e.target.innerText);
+})*/
+
+//closure fucntion binding along with lexical enviornmwent is called closure
+/*function  sum(a){
+	let b=10;
+	 function res(){
+	 	let sum= a+b;
+	 	console.log(sum);
+	 }
+	 return res;
+}
+let ans=sum(4);
+console.log(ans);
+ans();
+//counter example
+function counter(.;;p-){
+	let count=0;
+	function increment(){
+		console.log(++count);
+	}
+	return increment;
+
+}
+let ans1=counter();
+console.log(ans1);
+ans1();
+console.log(ans1);
+ans1();*/
+
+//event capturing and bubbling
+//event bubbilng move bottom to top and it is possible due to bydeafult false and event capturing is top to down and it is possible if we provieded true;
+/*const root=document.getElementById('root');
+root.innerHTML='<div id="grandparent"><div id="parent" ><div id="child"></div></div></div>'
+document.querySelector('#grandparent').addEventListener('click',(e)=>{
+	console.log("grandparent clicked");
+});
+	document.querySelector('#parent').addEventListener('click',(e)=>{
+	console.log("parent clicked");
+});
+	document.querySelector('#child').addEventListener('click',(e)=>{
+	console.log("child clicked");
+})*/
+
+/*//mutable and immutable
+const arr=[1,2,3,4];//1,2,3,5,5
+console.log(arr);
+const arr1=arr;
+arr1.push(5);
+console.log(arr1);//1,2,3,5,5//change existing old object is called mutability;
+console.log(arr);
+//how achived immutability
+const arr2=[1,2,3,4];
+const arr3=[...arr2,5];
+console.log(arr2);
+console.log(arr3);
+//op:true;
+//in case of object
+var person={
+	name:"pranav",
+	country:"india"
+}
+var person1=person;
+person1.age=8;
+console.log(person);
+console.log(person1);
+//how achived immuatbilty
+var person2={
+	name:"pranav",
+	country:"india"
+}
+var person3={
+	...person,
+	age:25,
+}
+console.log(person2);
+console.log(person3);*/
+
+//prototype inheritance
+/*const parent={
+	value:45,
+	get:function(){
+		return this.value;
+	}
+}
+console.log(parent);
+const child=Object.create(parent);
+child.value=3;
+console.log(child.get());
+console.log(child);
+const grandparent=Object.create(child);
+console.log(grandparent);
+grandparent.value=60;
+console.log(grandparent);*/
+//var let const
+//var this is global space and if define in fucntion then this will be fuction sdcope;
+/*var x="abc"
+ x="cde";
+function print(){
+	console.log(x);//abc
+}
+print();*/
+/*function print(){
+	var x="abc"
+	let y="cde"
+	console.log(x);//abc
+}
+print();
+console.log(x);//refernce eroor x is not defind
+console.log(y);//refernce error y is not defind*/
+/*{
+	var a=20;
+	let b=10;
+}
+console.log(a);//20
+console.log(b);// refernce error b is nor defind;*/
+//if we dont declare varible this behave as a global scope;
+
+/*function print(){
+	b=20;//behave as a global scope
+}
+print();
+console.log(b);//20*/
+//var x=1;
+//x=2;//in var case ok we can redclare the varible 
+//let y=1;
+//let y=2;//y has been already declared
+/*var x="abc";
+{
+	x="cde";
+}
+console.log(x);//cde basically overide the value;
+let y="abc"
+{
+	let z="acd";
+	console.log(z);//acd
+}
+console.log(z);//refrnce error z is not defind*/
+//hosting
+//we can hoisting var let and const
+/*console.log(x);
+var x="xyz";*/
+/*var x;
+console.log(x);
+x="xyz";//undefind
+console.log(y);
+let y="abc";//refernce eroor can not access before instilization*/
+
+//hoisting in function
+//we can hosting simple varible but not hoisting arrow fucntion
+/*function print(){
+	console.log("abc");
+}
+console.log(print());
+prints();
+console.log(prints());
+var prints=()=>{
+	console.log("tyagi");
+}*/
+//typeof(Nan)//number
+//typeof(null)//object
+//typeof(undefind)//object
+/*const root=document.getElementById('root');
+console.log(root);
+root.innerHTML='<div class="a"></div><div class="a"></div><div class="a"></div>';
+const ans=document.getElementsByClassName('a');//return array of div
+console.log(ans);*///in case of more than one id return object
+
+//ArrayMethod
+/*let arr1=[1,2,3,4];
+console.log(arr1.push(5));//push at the end
+console.log(arr1.pop());//pop at the end;
+console.log(arr1.unshift(5));//push at the starting
+console.log(arr1.shift())//deleted at starting
+arr1.splice(0,3)//deletd 3 elment strat with 0 index;
+console.log(arr1);
+const res=arr1.slice(1,3);
+console.log(res);//return all remove element
+delete arr1[0];
+console.log(arr1);//[empty,2,3,4];
+const obj=[
+{
+	name:"ashu",
+	age:"12"
+},{
+	name:"kartik",
+	age:"13",
+},{
+	name:"ashu",
+	age:"14",
+}
+]
+const arr=obj.find(data=>{
+	 if(data.name=="ashu")
+	 	return data;
+});//it return only first match
+console.log(arr);
+const arr2=obj.filter(data=>{
+	if(data.name=="ashu")
+		return data;
+})
+console.log(arr2);//it return all the match
+const arr3=obj.map(data=>{
+	if(data.name=="ashu")
+		return data;
+})
+console.log(arr3);//if condition not matched in map case this will print undefine
+output: {name: "ashu", age: "12"}
+1: undefined
+2: {name: "ashu", age: "14"}
+length: 3*/
+/*function treeConstructor(strArr) {
+    let parents = {};
+    let children = {};
+
+    for (let i = 0; i < strArr.length; i++) {
+        // i.e. ("1,2") => ["1", "2"]
+        let pair = strArr[i].replace(/[()]/g, "").split(",");
+        let child = pair[0];
+        let parent = pair[1];
+
+        //  check parents have at most 2 children 
+        if (parents[parent]) {
+            parents[parent].push(child);
+        } else {
+        	console.log([child]);
+            parents[parent]=[child];
+        }
+
+        if (parents[parent].length > 2) {
+            return false;
+        }
+
+        // check child has one parent 
+        if (children[child]) {
+            return false;
+        } else {
+            children[child] = parent;
+        }
+    }
+    console.log(parents);
+    console.log(children);
+    // check there is only one root node 
+        let root_count = 0;
+        let parent_values = Object.keys(parents)
+        console.log(parent_values);
+        for(let i = 0; i < parent_values.length; i++){
+            if(!children[parent_values[i]]){
+                root_count += 1;
+            }
+            if(root_count > 1){
+                return false;
+            }
+        }
+    return true;
+}
+
+// Given test cases 
+console.log(treeConstructor(["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"])) // return true 
+
+console.log(treeConstructor(["(1,2)", "(1,3)"])) // return false since we have a child with more than 1 parent
+
+// Additional test cases 
+//console.log(treeConstructor(["(1,2)", "(3,2)", "(4,2)"])) // return false since we have a parent with more than 2 children 
+//console.log(treeConstructor(["(3,2)", "(4,5)" ])) // return*/
+
+//comparsion between == and ===
+//==this will check only value
+//===this will checl value and also type
+//var x="5";
+//let y="5";
+/*if(5=="5")
+	console.log("yes");//yes type conversion
+if(5==="5")//no type conversion and output is false;
+var arr1=[1,2,3];
+var arr2=[1,2,3];
+if(arr1===arr2)
+console.log(yes);else{
+	console.log("no");//output because these are denoted two diff refernce
+}
+var arr3=arr1;
+if(arr3===arr1)
+	console.log("yes");//output(x);
+var y=5;
+var x=y;
+if(x===y)
+	console.log("yes");
+else
+	console.log("no");*/
+
+/*//nan means not a number it return it perticular varible is not a number
+isNan("string")//true
+isNan(123)//false;
+isNan(null)//false*
+
+/*diff between id and class
+we can use only unique id in html element but we can use more than one class with same name in html element*/
+
+//diff between display:none and visibity:none
+/*the basic diff between is in case of display node element not visible on screen and doest not take any space but in case of visiblity none this will take space*/
+
+//difference between <input type='button' /> and <input type='submit' />
+//basically we can use anywhere input type button and this will not submit the button on the other hand input type submit submit the form
+
+
+//what is callback
+/*function print(callback){
+	callback('ashu');
+}
+function name(x){
+	console.log(x);
+}
+print(name);*/
+/*callback is a function which passed as a argument in the fucntion and call another fucntion perform to some routine of task*/
+
+
+//async and await
+//async defind the function always return a Promise using await defind we will wait under //the promise will be resolve or rject using async and awiat we can perform opreation in syn
+ /*async function print (){
+	const data=await p;
+	console.log(data);
+} 
+const p=new Promise((resolve,reject)=>{
+	var x=2;
+	if(x==2){
+		return resolve(x);
+	}else{
+		return reject("error");
+
+	}
+	
+})*/
+
+//remove all duplicate in single line in java script
+/*var arr3=[1,2,2,3,3];
+var arr4=new Set(arr3);
+console.log(arr4);
+var set=new Set();
+set.add(4);
+set.add(5);
+set.add(6);
+set.add(7);
+console.log(set);
+set.delete(5);
+console.log(set);
+//set.clear();
+console.log(set);
+console.log(set.has(5));//it return true if value find or false if not find*/
+
+
+//destructuring array
+//let a,b,rest;
+//[a,b,...rest]=[1,2,3,4,5,6];
+//console.log(a);
+//console.log(b);
+//console.log(rest);
+//destructuring object
+/*const obj={
+	id:1,
+	name:"ashu"
+}
+const{id,name}=obj;
+console.log(id);
+console.log(name);*/
+
+//spread and rest opreator in java script
+/*function sum(...args){
+	let sum=0;
+	for(let arg of args){
+		sum=sum+arg;
+	}
+	return sum;
+}
+console.log(sum(1));
+console.log(sum(1,2,3,4));
+usinf rest opreator we can access all the parametr pass in fucntion in the form of array using three dots*/
+
+//sperad opretaor expend the array into the argument list
+/*var arr1=[1,2,3,4];
+var arr2=[...arr1,5,6];
+console.log(arr2);
+console.log(Math.max(...arr2));//it expend the array into the argument list*/
+
+// fucntion currying in java script translate the callable function like f(a,b) into f(a)f(b
+/*let mul=function(x){
+	return function (y){
+		console.log(x*y);
+	}
+}
+const res=mul(3);
+console.log(res);
+res(2);*/
+//first class function
+//basiclayy they are treated as a first class object we cam store in a varible and we can pass an argument at all this is called first class fucntion
+
+/*//string method
+var s="abcddddd  ";
+	console.log(s.indexOf('d'));
+	console.log(s.lastIndexOf('d'));
+	console.log(s.indexOf('e'));
+	console.log(s.length)
+	console.log(s.replace('d','e'));
+	console.log(s.repeat(2));
+	console.log(s.search('f'));
+	console.log(s.slice(0,4));
+	console.log(s.split());
+	console.log(s.toString());
+	console.log(s.trim());//remove space
+	console.log(s.valueOf());*/
+	/*var fruits=["ashu","banana","dat","cat"];
+	console.log(fruits.sort());//sort based on character but fail in case of no
+	var number=["20","100","30"];
+	console.log(number);//op 20,100,30*/
+	//var number=["20","100","30"];
+	/*var res=number.sort(function(a,b){
+		return a-b;
+	})
+	console.log(res);//print incresing order*/
+	/*var res=number.sort(function(a,b){
+		return b-a;
+	})
+	console.log(res);//print decreasing order*/
+	//sort object;
+	/*const obj=[
+	{
+		name:"zshu",
+		year:2017
+
+	},
+	{
+		name:"Kartik",
+		year:2016
+
+	}
+	]
+	//console.log(obj.sort(function(a,b){
+		//return a.year-b.year;
+
+	//}));
+
+	console.log(obj.sort(function(a,b){
+		var a1=a.name.toLowerCase();
+		var a2=b.name.toLowerCase();
+		if(a1<a2)
+			return -1;
+		if(a1>a2)
+			return 1;
+		return 0;
+
+
+	}))*/
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
